@@ -17,7 +17,7 @@ TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
   if (data) {
     const { locations } = data;
     const location = locations?.[0];
-    const code = global.__safety-prydeSessionCode;
+    const code = global.__safetyPrydeSessionCode;
     if (location && code) {
       try {
         await updateLocation(code, location.coords);
@@ -29,7 +29,7 @@ TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
 });
 
 export async function startBackgroundLocation(code) {
-  global.__safety-prydeSessionCode = code;
+  global.__safetyPrydeSessionCode = code;
 
   const { status: fgStatus } = await Location.requestForegroundPermissionsAsync();
   if (fgStatus !== "granted") throw new Error("Foreground location permission denied");
@@ -39,8 +39,8 @@ export async function startBackgroundLocation(code) {
 
   await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
     accuracy: Location.Accuracy.High,
-    timeInterval: 15000, // 15s — balance battery vs. how fresh her location looks
-    distanceInterval: 20, // or every 20 meters, whichever comes first
+    timeInterval: 15000,
+    distanceInterval: 20,
     showsBackgroundLocationIndicator: true,
     foregroundService: {
       notificationTitle: "Safety Pryde is active",
@@ -54,5 +54,5 @@ export async function stopBackgroundLocation() {
   if (started) {
     await Location.stopLocationUpdatesAsync(LOCATION_TASK_NAME);
   }
-  global.__safety-prydeSessionCode = null;
+  global.__safetyPrydeSessionCode = null;
 }

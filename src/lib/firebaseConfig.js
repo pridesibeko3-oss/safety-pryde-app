@@ -22,12 +22,14 @@ import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "REPLACE_ME",
-  authDomain: "REPLACE_ME.firebaseapp.com",
-  projectId: "REPLACE_ME",
-  storageBucket: "REPLACE_ME.appspot.com",
-  messagingSenderId: "REPLACE_ME",
-  appId: "REPLACE_ME",
+ const firebaseConfig = {
+  apiKey: "AIzaSyDuhsGWyvVNiLFhGEiMnlm-efy0CqvX2go",
+  authDomain: "safety-pryde.firebaseapp.com",
+  projectId: "safety-pryde",
+  storageBucket: "safety-pryde.firebasestorage.app",
+  messagingSenderId: "158440398848",
+  appId: "1:158440398848:web:65d1c1b15e3621b0ac38e5"
+};
 };
 
 export const app = initializeApp(firebaseConfig);

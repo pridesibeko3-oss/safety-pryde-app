@@ -1,16 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { createClient } from "@supabase/supabase-js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDuhsGWyvVNiLFhGEiMnlm-efy0CqvX2go",
-  authDomain: "safety-pryde.firebaseapp.com",
-  projectId: "safety-pryde",
-  storageBucket: "safety-pryde.firebasestorage.app",
-  messagingSenderId: "158440398848",
-  appId: "1:158440398848:web:65d1c1b15e3621b0ac38e5"
-};
+const SUPABASE_URL = "https://selhfelbtkbahwfajusi.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlbGhmZWxidGtiYWh3ZmFqdXNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwMzM2MDUsImV4cCI6MjEwNTYwOTYwNX0.kvzbt_o1BReo_j8RokMY_YB4z-xE8tEJse7aACUel9Q";
 
-export const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);

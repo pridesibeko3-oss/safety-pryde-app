@@ -4,11 +4,6 @@ import { updateLocation } from "../lib/session";
 
 export const LOCATION_TASK_NAME = "safety-pryde-background-location";
 
-// This is what makes tracking survive the screen turning off or the app
-// being backgrounded — it registers a real Android foreground service
-// (the persistent "Safety Pryde is sharing your location" notification is
-// required by Android for this to keep running; don't try to hide it,
-// Android will kill the task if you do).
 TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
   if (error) {
     console.error("Location task error:", error);

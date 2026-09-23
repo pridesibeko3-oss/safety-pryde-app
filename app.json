@@ -3,9 +3,12 @@
     "name": "Safety Pryde",
     "slug": "safety-pryde",
     "version": "1.0.0",
-    "orientation": "portrait",
+        "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "android": {
+    "splash": {
+      "backgroundColor": "#b5473f",
+      "resizeMode": "contain"
+    },
       "package": "com.safetypryde.app",
       "permissions": [
         "ACCESS_FINE_LOCATION",

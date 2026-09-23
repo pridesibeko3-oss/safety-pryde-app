@@ -1,4 +1,4 @@
-# Safety Pryde — Setup & Launch Guide
+# Safety Pryde — Setup & Launch Guide 
 
 This is a real Expo/React Native app: background location that survives
 the screen being off, real push notifications, camera capture, and a
